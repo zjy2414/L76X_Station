@@ -252,12 +252,12 @@ class L76X(object):
        Elevation = DataTuple[9]
        return Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation
 
-#转换DDMM.MMMM至DD.DDDD
-def ConvertDM(DDMM):
-    LocationOfDot = DDMM.find(".")
-    D = DDMM[0:LocationOfDot-1] #获取字符串度部分
-    M = DDMM[LocationOfDot+1:]  #获取字符串分部分
-    return D + (M/60)  
+    #转换DDMM.MMMM至DD.DDDD
+    def onvertDM(DDMM):
+       LocationOfDot = DDMM.find(".")
+       D = DDMM[0:LocationOfDot-1] #获取字符串度部分
+       M = DDMM[LocationOfDot+1:]  #获取字符串分部分
+       return D + (M/60)  
 
 
 
