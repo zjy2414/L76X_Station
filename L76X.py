@@ -113,7 +113,7 @@ class L76X(object):
             (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
             Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             try:
-            Lora.Send(data) 
+                Lora.Send(data) 
             except:
                 print('error.')
                 Lora.Send("GNGGA ERROR.")
