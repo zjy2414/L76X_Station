@@ -106,7 +106,7 @@ class L76X(object):
         print data
 
         print '\n'
-        if(L76X.IfGNGGA(data)):
+        # if(L76X.IfGNGGA(data)):
             #(Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
             #Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             # try:
