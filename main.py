@@ -44,9 +44,9 @@ def Main():
            message = str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "\r\n"
            Lora.Send(message)
     except:
-    #GPIO.cleanup()
-    print "\nProgram end"
-    exit()
+        #GPIO.cleanup()
+        print "\nProgram end"
+        exit()
 
 with daemon.DaemonContext():
     Main()
