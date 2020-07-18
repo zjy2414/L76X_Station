@@ -97,6 +97,7 @@ class L76X(object):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         print data
         print '\n'
+        print data.find('GNGGA')
         
 
         

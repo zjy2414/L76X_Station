@@ -18,6 +18,8 @@ try:
     while(1):
         x.L76X_Gat_GNRMC()
         x.Get_GNGGA()
+        
+
         if(x.Status == 1):
             print 'Already positioned'
         else:
