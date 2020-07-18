@@ -98,6 +98,7 @@ class L76X(object):
         print data
         print '\n'
         print data.find('GNGGA')
+        print '\n'
         
 
         
