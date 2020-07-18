@@ -103,7 +103,15 @@ class L76X(object):
         mark2 = data.find('$GPGSA')
         print 'GNGGA位置：' + str(mark1) + '\n'
         print data[mark1:mark2]
+        data = data[mark1:mark2]
         print '\n'
+        if(L76X.IfGNGGA(data)):
+            (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
+            try:
+              Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
+            except:
+                print('error.')
+                Lora.Send("GNGGA ERROR.")
         
 
         

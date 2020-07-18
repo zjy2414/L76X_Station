@@ -22,13 +22,7 @@ try:
         x.L76X_Gat_GNRMC()
         x.Get_GNGGA()
 
-        if(L76X.IfGNGGA(data)):
-            (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
-            try:
-              Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
-            except:
-                print('error.')
-                Lora.Send("GNGGA ERROR.")
+        
 
         if(x.Status == 1):
             print 'Already positioned'
