@@ -23,7 +23,7 @@ try:
         try:
             x.Get_GNGGA()
         except:
-            print ‘error！！！’
+            print 'error！！！'
         
 
         if(x.Status == 1):
