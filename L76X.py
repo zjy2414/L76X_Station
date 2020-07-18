@@ -95,8 +95,8 @@ class L76X(object):
 
     def Get_GNGGA(self):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
-        print data
-        print '\n'
+        # print data
+        # print '\n'
         print data.find('GNGGA')
         print '\n'
         
