@@ -111,6 +111,7 @@ class L76X(object):
         Lora.Send(data)
         # if(L76X.IfGNGGA(data)):
         GNGGA_DATA = L76X.GetCGPS_INFO(data)
+        print GNGGA_DATA
         Lon = GNGGA_DATA[0]
         Lon_area = GNGGA_DATA[1]
         Lat = GNGGA_DATA[2]
