@@ -111,14 +111,14 @@ class L76X(object):
         Lora.Send(data)
         # if(L76X.IfGNGGA(data)):
         GNGGA_DATA = L76X.GetCGPS_INFO(data)
-        # Lon = GNGGA_DATA[0]
-        # Lon_area = GNGGA_DATA[1]
-        # Lat = GNGGA_DATA[2]
-        # Lat_area = GNGGA_DATA[3]
-        # Status = GNGGA_DATA[4]
-        # Satellites = GNGGA_DATA[5]
-        # ElevationGNGGA_DATA[6]
-        Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation = GNGGA_DATA
+        Lon = GNGGA_DATA[0]
+        Lon_area = GNGGA_DATA[1]
+        Lat = GNGGA_DATA[2]
+        Lat_area = GNGGA_DATA[3]
+        Status = GNGGA_DATA[4]
+        Satellites = GNGGA_DATA[5]
+        ElevationGNGGA_DATA[6]
+        # Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation = GNGGA_DATA
         Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             # try:
             #     Lora.Send(data) 
@@ -271,7 +271,8 @@ class L76X(object):
        Status = DataTuple[6]
        Satellites = DataTuple[7]
        Elevation = DataTuple[9]
-       return Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation
+       result = (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation)
+       return result
 
     #转换DDMM.MMMM至DD.DDDD
     def ConvertDM(DDMM):
