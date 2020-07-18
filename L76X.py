@@ -97,7 +97,9 @@ class L76X(object):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         # print data
         # print '\n'
-        print data.find('$GNGGA')
+        mark = data.find('$GNGGA')
+        print 'GNGGA位置：' + mark + '\n'
+        print data[mark:makr+100]
         print '\n'
         
 
