@@ -105,10 +105,9 @@ class L76X(object):
         print 'GNGGA位置：' + str(mark1) + '\n'
         data = data[mark1:mark2]
         print data
-
         print '\n'
 
-        Lora.send(data)
+        Lora.Send(data)
         # if(L76X.IfGNGGA(data)):
             #(Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
             #Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
