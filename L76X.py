@@ -97,7 +97,7 @@ class L76X(object):
         self.config.Uart_SendByte('\n')
         print data
 
-    //获取GNGGA信息
+    #获取GNGGA信息
     def Get_GNGGA(self):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         # print data
