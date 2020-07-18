@@ -252,9 +252,9 @@ class L76X(object):
     def GetCGPS_INFO(data):
        DataList = data.split(",")
        DataTuple = tuple(DataList)
-       Lon = ConvertDM(DataTuple[2])
+       Lon = L76X.ConvertDM(DataTuple[2])
        Lon_area = DataTuple[3]
-       Lat = ConvertDM(DataTuple[4])
+       Lat = L76X.ConvertDM(DataTuple[4])
        Lat_area = DataTuple[5]
        Status = DataTuple[6]
        Satellites = DataTuple[7]
@@ -262,7 +262,7 @@ class L76X(object):
        return Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation
 
     #转换DDMM.MMMM至DD.DDDD
-    def onvertDM(DDMM):
+    def ConvertDM(DDMM):
        LocationOfDot = DDMM.find(".")
        D = DDMM[0:LocationOfDot-1] #获取字符串度部分
        M = DDMM[LocationOfDot+1:]  #获取字符串分部分
