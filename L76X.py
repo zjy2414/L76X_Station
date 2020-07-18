@@ -110,17 +110,17 @@ class L76X(object):
         print '\n'
         Lora.Send(data)
         # if(L76X.IfGNGGA(data)):
-        GNGGA_DATA = L76X.GetCGPS_INFO(data)
-        print GNGGA_DATA
-        Lon = GNGGA_DATA[0]
-        Lon_area = GNGGA_DATA[1]
-        Lat = GNGGA_DATA[2]
-        Lat_area = GNGGA_DATA[3]
-        Status = GNGGA_DATA[4]
-        Satellites = GNGGA_DATA[5]
-        Elevation=GNGGA_DATA[6]
+        # GNGGA_DATA = L76X.GetCGPS_INFO(data)
+        # print GNGGA_DATA
+        # Lon = GNGGA_DATA[0]
+        # Lon_area = GNGGA_DATA[1]
+        # Lat = GNGGA_DATA[2]
+        # Lat_area = GNGGA_DATA[3]
+        # Status = GNGGA_DATA[4]
+        # Satellites = GNGGA_DATA[5]
+        # Elevation=GNGGA_DATA[6]
         # Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation = GNGGA_DATA
-        Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
+        # Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             # try:
             #     Lora.Send(data) 
             # except:
@@ -261,19 +261,19 @@ class L76X(object):
     #   else:
     #     return False
 
-    #分析北斗返回参数GNGGA
-    def GetCGPS_INFO(data):
-       DataList = data.split(",")
-       DataTuple = tuple(DataList)
-       Lon = L76X.ConvertDM(DataTuple[2])
-       Lon_area = DataTuple[3]
-       Lat = L76X.ConvertDM(DataTuple[4])
-       Lat_area = DataTuple[5]
-       Status = DataTuple[6]
-       Satellites = DataTuple[7]
-       Elevation = DataTuple[9]
-       result = (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation)
-       return result
+    # #分析北斗返回参数GNGGA
+    # def GetCGPS_INFO(data):
+    #    DataList = data.split(",")
+    #    DataTuple = tuple(DataList)
+    #    Lon = L76X.ConvertDM(DataTuple[2])
+    #    Lon_area = DataTuple[3]
+    #    Lat = L76X.ConvertDM(DataTuple[4])
+    #    Lat_area = DataTuple[5]
+    #    Status = DataTuple[6]
+    #    Satellites = DataTuple[7]
+    #    Elevation = DataTuple[9]
+    #    result = (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation)
+    #    return result
 
     #转换DDMM.MMMM至DD.DDDD
     def ConvertDM(DDMM):
