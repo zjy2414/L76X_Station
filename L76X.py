@@ -118,7 +118,7 @@ class L76X(object):
         Lat_area = GNGGA_DATA[3]
         Status = GNGGA_DATA[4]
         Satellites = GNGGA_DATA[5]
-        ElevationGNGGA_DATA[6]
+        Elevation=GNGGA_DATA[6]
         # Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation = GNGGA_DATA
         Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             # try:
