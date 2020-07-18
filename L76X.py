@@ -99,7 +99,7 @@ class L76X(object):
         # print '\n'
         mark = data.find('$GNGGA')
         print 'GNGGA位置：' + mark + '\n'
-        print data[mark:makr+100]
+        # print data[mark:makr+100]
         print '\n'
         
 
