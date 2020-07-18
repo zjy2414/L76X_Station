@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 import config
 import math
 import time
+import Lora
 
 Temp = '0123456789ABCDEF*'
 BUFFSIZE = 1100
@@ -107,7 +108,7 @@ class L76X(object):
 
         print '\n'
 
-        Lora.send('good')
+        Lora.send(data)
         # if(L76X.IfGNGGA(data)):
             #(Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
             #Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
