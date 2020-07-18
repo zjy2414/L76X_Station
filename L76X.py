@@ -101,7 +101,7 @@ class L76X(object):
         # print '\n'
         mark = data.find('$GNGGA')
         print 'GNGGA位置：' + str(mark) + '\n'
-        print data[mark:makr+100]
+        print data[mark:mark+10]
         print '\n'
         
 
