@@ -110,13 +110,13 @@ class L76X(object):
         print '\n'
         Lora.Send(data)
         # if(L76X.IfGNGGA(data)):
-        #     #(Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
-        #     #Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
-        #     try:
-        #         Lora.Send(data) 
-        #     except:
-        #         print('error.')
-        #         Lora.Send("GNGGA ERROR.")
+        (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
+        Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
+            # try:
+            #     Lora.Send(data) 
+            # except:
+            #     print('error.')
+            #     Lora.Send("GNGGA ERROR.")
         
 
         
@@ -245,12 +245,12 @@ class L76X(object):
         time.sleep(1)
         GPIO.setup(self.config.FORCE, GPIO.IN)
 
-    #验证GNGGA数据行有效性
-    def IfGNGGA(data):
-      if '$GNGGA' in data:
-        return True
-      else:
-        return False
+    # #验证GNGGA数据行有效性
+    # def IfGNGGA(data):
+    #   if '$GNGGA' in data:
+    #     return True
+    #   else:
+    #     return False
 
     #分析北斗返回参数GNGGA
     def GetCGPS_INFO(data):
