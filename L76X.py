@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 import RPi.GPIO as GPIO
 import config
 import math
