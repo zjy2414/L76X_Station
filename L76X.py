@@ -106,7 +106,7 @@ class L76X(object):
         data = data[mark1:mark2]
         print '\n'
         if(L76X.IfGNGGA(data)):
-            (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
+            (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(da.datata)
             try:
               Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
             except:
