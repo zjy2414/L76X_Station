@@ -43,7 +43,7 @@ def Main():
            print ',%f'%x.Lon_Baidu
            message = str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "\r\n"
            Lora.Send(message)
-except:
+    except:
     #GPIO.cleanup()
     print "\nProgram end"
     exit()
