@@ -84,6 +84,7 @@ class L76X(object):
     def __init__(self):
         self.config = config.config(9600)
     
+    #发送指令
     def L76X_Send_Command(self, data):
         Check = ord(data[1]) 
         for i in range(2, len(data)):
@@ -96,6 +97,7 @@ class L76X(object):
         self.config.Uart_SendByte('\n')
         print data
 
+    //获取GNGGA信息
     def Get_GNGGA(self):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         # print data
@@ -106,16 +108,15 @@ class L76X(object):
         data = data[mark1:mark2]
         print data
         print '\n'
-
-        Lora.Send(data)
-        # if(L76X.IfGNGGA(data)):
-            #(Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
-            #Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
-            # try:
-            # Lora.Send(data) 
-            # except:
-            #     print('error.')
-            #     Lora.Send("GNGGA ERROR.")
+        # Lora.Send(data)
+        if(L76X.IfGNGGA(data)):
+            (Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation) = L76X.GetCGPS_INFO(data)
+            Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
+            try:
+            Lora.Send(data) 
+            except:
+                print('error.')
+                Lora.Send("GNGGA ERROR.")
         
 
         
