@@ -232,8 +232,32 @@ class L76X(object):
         time.sleep(1)
         GPIO.setup(self.config.FORCE, GPIO.IN)
 
+    #验证GNGGA数据行有效性
+    def IfGNGGA(data):
+      if '$GNGGA' in data:
+        return True
+      else:
+        return False
 
-    
+    #分析北斗返回参数GNGGA
+    def GetCGPS_INFO(data):
+       DataList = data.split(",")
+       DataTuple = tuple(DataList)
+       Lon = ConvertDM(DataTuple[2])
+       Lon_area = DataTuple[3]
+       Lat = ConvertDM(DataTuple[4])
+       Lat_area = DataTuple[5]
+       Status = DataTuple[6]
+       Satellites = DataTuple[7]
+       Elevation = DataTuple[9]
+       return Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation
+
+#转换DDMM.MMMM至DD.DDDD
+def ConvertDM(DDMM):
+    LocationOfDot = DDMM.find(".")
+    D = DDMM[0:LocationOfDot-1] #获取字符串度部分
+    M = DDMM[LocationOfDot+1:]  #获取字符串分部分
+    return D + (M/60)  
 
 
 
