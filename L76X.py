@@ -118,7 +118,7 @@ class L76X(object):
             Satellites = GNGGA_DATA[7]
             HDOP = GNGGA_DATA[8]
             Elevation = GNGGA_DATA[9]
-            message = CGPS_Status + ‘,‘ + Satellites + ’，‘ + HDOP + ’，‘ + Elevation
+            message = '$IF' + CGPS_Status + ‘,‘ + Satellites + ’，‘ + HDOP + ’，‘ + Elevation
             Lora.Send(message)
 
 
