@@ -42,8 +42,7 @@ def Main():
         #    print 'Baidu coordinate %f'%x.Lat_Baidu,
         #    print ',%f'%x.Lon_Baidu
            try:
-               gngga_msg = ""
-               gngga_msg = x.Get_GNGGA()
+               x.Get_GNGGA()
                message = "*" + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + x._Status + ',' + x.Satellites + ',' + x.Elevation
                Lora.Send(message)
            except:

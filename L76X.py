@@ -135,7 +135,7 @@ class L76X(object):
             self.Satellites = GNGGA_DATA[7]
             self.Elevation = GNGGA_DATA[9]
         except:
-            print("gngga error.")
+            Lora.Send("gngga error.")
         
         
 
