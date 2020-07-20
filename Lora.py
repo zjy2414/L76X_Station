@@ -6,6 +6,6 @@ import time
 #Lora信通发送数据
 def Send(message):
     ser=serial.Serial("/dev/ttyUSB0",9600,timeout=1)     #配置Lora通讯串口
-    ser.write(message+"/r")
+    ser.write(message+"\r")
     time.sleep(0.5)
     ser.close()
