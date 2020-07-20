@@ -108,25 +108,20 @@ class L76X(object):
         data = data[mark1:mark2]
         print data
         print '\n'
-        Lora.Send(data)
+        # Lora.Send(data)
         time.sleep(0.5)
-        # if(L76X.IfGNGGA(data)):
-        # GNGGA_DATA = L76X.GetCGPS_INFO(data)
-        # print GNGGA_DATA
-        # Lon = GNGGA_DATA[0]
-        # Lon_area = GNGGA_DATA[1]
-        # Lat = GNGGA_DATA[2]
-        # Lat_area = GNGGA_DATA[3]
-        # Status = GNGGA_DATA[4]
-        # Satellites = GNGGA_DATA[5]
-        # Elevation=GNGGA_DATA[6]
-        # Lon,Lon_area,Lat,Lat_area,Status,Satellites,Elevation = GNGGA_DATA
-        # Lora.Send(Lon+","+Lon_area+","+Lat+","+Lat_area+","+Status+","+Satellites+","+Elevation)
-            # try:
-            #     Lora.Send(data) 
-            # except:
-            #     print('error.')
-            #     Lora.Send("GNGGA ERROR.")
+
+        GNGGA_DATA = data.split(",")
+
+        if(len(GNGGA_DATA)>=12):
+            CGPS_Status = GNGGA_DATA[6]
+            Satellites = GNGGA_DATA[7]
+            HDOP = GNGGA_DATA[8]
+            Elevation = GNGGA_DATA[9]
+            message = CGPS_Status + ‘,‘ + Satellites + ’，‘ + HDOP + ’，‘ + Elevation
+            Lora.Send(message)
+
+
         
 
         
