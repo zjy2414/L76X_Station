@@ -129,7 +129,7 @@ class L76X(object):
         mark2 = data.find('$GPGSA')
         print 'GNGGA位置：' + str(mark1) + '\n'
         data = data[mark1:mark2]
-
+        GNGGA_DATA = data.split(",")
         try:
             self._Status = GNGGA_DATA[6]
             self.Satellites = GNGGA_DATA[7]
