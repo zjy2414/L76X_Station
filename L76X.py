@@ -29,6 +29,10 @@ class L76X(object):
     Lat_Baidu = 0.0
     Lon_Goodle = 0.0
     Lat_Goodle = 0.0
+
+    _Status = '0'
+    Satellites = '0'
+    Elevation = '0.0'
     
     GPS_Lon = 0
     GPS_Lat = 0
@@ -97,26 +101,42 @@ class L76X(object):
         self.config.Uart_SendByte('\n')
         print data
 
+    # #获取GNGGA信息
+    # def Get_GNGGA():
+    #     GNGGA_DATA = "1,2"
+    #     data = self.config.Uart_ReceiveString(BUFFSIZE)
+    #     mark1 = data.find('$GNGGA')
+    #     mark2 = data.find('$GPGSA')
+    #     print 'GNGGA位置：' + str(mark1) + '\n'
+    #     data = data[mark1:mark2]
+    #     print data
+    #     print '\n'
+    #     # Lora.Send(data)
+    #     # time.sleep(0.2)
+
+    #     GNGGA_DATA = data.split(",")
+    #     if(len(GNGGA_DATA)>=11):
+    #         message = GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[9]
+    #         return message
+    #     else:
+    #         return ""
+
     #获取GNGGA信息
-    def Get_GNGGA():
+    def Get_GNGGA(self):
         GNGGA_DATA = "1,2"
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         mark1 = data.find('$GNGGA')
         mark2 = data.find('$GPGSA')
         print 'GNGGA位置：' + str(mark1) + '\n'
         data = data[mark1:mark2]
-        print data
-        print '\n'
-        # Lora.Send(data)
-        # time.sleep(0.2)
 
-        GNGGA_DATA = data.split(",")
-        if(len(GNGGA_DATA)>=11):
-            message = GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[9]
-            return message
-        else:
-            return ""
-
+        try:
+            self._Status = GNGGA_DATA[6]
+            self.Satellites = GNGGA_DATA[7]
+            self.Elevation = GNGGA_DATA[9]
+        except:
+            print("gngga error.")
+        
         
 
         
