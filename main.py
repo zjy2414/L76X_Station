@@ -32,19 +32,23 @@ def Main():
            else:
                print 'No positioning'
 
-           print 'Time %d:'%x.Time_H,
-           print '%d:'%x.Time_M,
-           print '%d'%x.Time_S
+        #    print 'Time %d:'%x.Time_H,
+        #    print '%d:'%x.Time_M,
+        #    print '%d'%x.Time_S
 
-           print 'Lon = %f'%x.Lon,
-           print ' Lat = %f'%x.Lat
+        #    print 'Lon = %f'%x.Lon,
+        #    print ' Lat = %f'%x.Lat
            x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
-           print 'Baidu coordinate %f'%x.Lat_Baidu,
-           print ',%f'%x.Lon_Baidu
-           gngga_msg = x.Get_GNGGA()
-           message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + gngga_msg
-
-           Lora.Send(message)
+        #    print 'Baidu coordinate %f'%x.Lat_Baidu,
+        #    print ',%f'%x.Lon_Baidu
+           try:
+               gngga_msg = ""
+               gngga_msg = x.Get_GNGGA()
+               message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + gngga_msg
+               Lora.Send(message)
+           except:
+               print("error.")
+               Lora.Send("ERROR!")
         #    time.sleep(0.5)
     except:
         #GPIO.cleanup()
