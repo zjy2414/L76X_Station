@@ -43,7 +43,7 @@ def Main():
         #    print ',%f'%x.Lon_Baidu
            try:
                x.Get_GNGGA()
-               message = "*" + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + x._Status + ',' + x.Satellites + ',' + x.Elevation + '&'
+               message = "*" + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + x._Status + ',' + x.Satellites + ',' + x.Elevation + 'm'
                Lora.Send(message)
            except:
                print("error.")
