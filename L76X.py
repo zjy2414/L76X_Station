@@ -115,6 +115,8 @@ class L76X(object):
         if(len(GNGGA_DATA)>=11):
             message = GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[9]
             return message
+        else:
+            return ""
 
         
 

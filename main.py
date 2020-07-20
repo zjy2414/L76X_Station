@@ -44,11 +44,11 @@ def Main():
            try:
                gngga_msg = ""
                gngga_msg = x.Get_GNGGA()
-               message = "*" + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + gngga_msg
+               message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + gngga_msg
                Lora.Send(message)
            except:
                print("error.")
-               Lora.Send("ERROR!")
+               Lora.Send("Main ERROR!")
         #    time.sleep(0.5)
     except:
         #GPIO.cleanup()
