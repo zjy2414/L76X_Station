@@ -117,7 +117,6 @@ class L76X(object):
             message = '$IF' + GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[8] + ',' + GNGGA_DATA[9]
             Lora.Send(message)
 
-
         
 
         
