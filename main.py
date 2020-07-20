@@ -41,7 +41,7 @@ def Main():
            x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
            print 'Baidu coordinate %f'%x.Lat_Baidu,
            print ',%f'%x.Lon_Baidu
-           message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu)
+           message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "\r\n"
            Lora.Send(message)
            time.sleep(0.5)
     except:
