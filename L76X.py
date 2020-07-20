@@ -113,12 +113,8 @@ class L76X(object):
 
         GNGGA_DATA = data.split(",")
 
-        if(len(GNGGA_DATA)>=12):
-            CGPS_Status = GNGGA_DATA[6]
-            Satellites = GNGGA_DATA[7]
-            HDOP = GNGGA_DATA[8]
-            Elevation = GNGGA_DATA[9]
-            message = '$IF' + CGPS_Status + ‘,‘ + Satellites + ’，‘ + HDOP + ’，‘ + Elevation
+        if(len(GNGGA_DATA)>=11):
+            message = '$IF' + GNGGA_DATA[6] + ‘,‘ + GNGGA_DATA[7] + ’，‘ + GNGGA_DATA[8] + ’，‘ + GNGGA_DATA[9]
             Lora.Send(message)
 
 
