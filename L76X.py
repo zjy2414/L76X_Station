@@ -109,7 +109,7 @@ class L76X(object):
         print data
         print '\n'
         # Lora.Send(data)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
         GNGGA_DATA = data.split(",")
 
