@@ -109,6 +109,7 @@ class L76X(object):
         print data
         print '\n'
         Lora.Send(data)
+        time.sleep(0.5)
         # if(L76X.IfGNGGA(data)):
         # GNGGA_DATA = L76X.GetCGPS_INFO(data)
         # print GNGGA_DATA

@@ -43,6 +43,7 @@ def Main():
            print ',%f'%x.Lon_Baidu
            message = "$BD," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "\r\n"
            Lora.Send(message)
+           time.sleep(0.5)
     except:
         #GPIO.cleanup()
         print "\nProgram end"
