@@ -99,6 +99,7 @@ class L76X(object):
 
     #获取GNGGA信息
     def Get_GNGGA(self):
+        GNGGA_DATA = "1,2"
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         # print data
         # print '\n'
@@ -114,8 +115,10 @@ class L76X(object):
         GNGGA_DATA = data.split(",")
 
         if(len(GNGGA_DATA)>=11):
-            message = '$' + "," + GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[9]
-            Lora.Send(message)
+            message = GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[9]
+            return message
+        else:
+            return "ERROR!"
 
         
 

@@ -22,10 +22,10 @@ def Main():
         x.L76X_Exit_BackupMode();
         while(1):
            x.L76X_Gat_GNRMC()
-           try:
-               x.Get_GNGGA()
-           except:
-               Lora.Send('error!!')    
+        #    try:
+        #        x.Get_GNGGA()
+        #    except:
+        #        Lora.Send('error!!')    
 
            if(x.Status == 1):
                print 'Already positioned'
@@ -41,7 +41,9 @@ def Main():
            x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
            print 'Baidu coordinate %f'%x.Lat_Baidu,
            print ',%f'%x.Lon_Baidu
-           message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu)
+           gngga_msg = x.Get_GNGGA()
+           message = "*," + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + gngga_msg
+
            Lora.Send(message)
         #    time.sleep(0.5)
     except:
