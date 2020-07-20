@@ -99,9 +99,8 @@ class L76X(object):
 
     #获取GNGGA信息
     def Get_GNGGA():
+        GNGGA_DATA = "1,2"
         data = self.config.Uart_ReceiveString(BUFFSIZE)
-        # print data
-        # print '\n'
         mark1 = data.find('$GNGGA')
         mark2 = data.find('$GPGSA')
         print 'GNGGA位置：' + str(mark1) + '\n'
