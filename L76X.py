@@ -114,7 +114,7 @@ class L76X(object):
         GNGGA_DATA = data.split(",")
 
         if(len(GNGGA_DATA)>=11):
-            message = '$IF' + "," + + GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[8] + ',' + GNGGA_DATA[9]
+            message = '$IF' + "," + GNGGA_DATA[6] + "," + GNGGA_DATA[7] + ',' + GNGGA_DATA[8] + ',' + GNGGA_DATA[9]
             Lora.Send(message)
 
         
