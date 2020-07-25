@@ -118,8 +118,19 @@ class L76X(object):
             self.Satellites = GNGGA_DATA[7]
             self.Elevation = GNGGA_DATA[9]
         except:
-            Lora.Send("gngga error.") #向地面站发送报错信息
+            Lora.Send("gngga error.") #向地面站发送北斗报错信息
+
+    def Get_TP(self):
+        try:
+            data=Lora.Receive()
+            if(data[0]=="$"):
+                data = data[1:len(data)-1]
+                self.Temperture=data.split(",")[0]  //获取环境温度
+                self.Pressure=data.split(",")[1]    //获取环境气压
+        except:
+            Lora.Send("tp error.") #向地面站发送温度气压传感器报错信息
         
+
     #获取GNRMC数据   
     def L76X_Gat_GNRMC(self):
         data = self.config.Uart_ReceiveString(BUFFSIZE)

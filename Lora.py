@@ -9,3 +9,7 @@ def Send(message):
     ser.write(message+"\r\n")
     # time.sleep(0.1)
     ser.close()
+
+def Receive():
+    ser=serial.Serial("/dev/ttyUSB1",9600,timeout=2)     #配置Arduino温度气压串口
+    return str(ser.readline().decode())
