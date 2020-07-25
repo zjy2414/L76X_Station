@@ -12,4 +12,6 @@ def Send(message):
 
 def Receive():
     ser=serial.Serial("/dev/ttyUSB1",9600,timeout=2)     #配置Arduino温度气压串口
-    return str(ser.readline().decode())
+    data = str(ser.readline().decode())
+    ser.close()
+    return data
