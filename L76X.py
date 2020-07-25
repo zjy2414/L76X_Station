@@ -135,11 +135,9 @@ class L76X(object):
             self.Satellites = GNGGA_DATA[7]
             self.Elevation = GNGGA_DATA[9]
         except:
-            Lora.Send("gngga error.")
+            Lora.Send("gngga error.") #向地面站发送报错信息
         
-        
-
-        
+    #获取GNRMC数据   
     def L76X_Gat_GNRMC(self):
         data = self.config.Uart_ReceiveString(BUFFSIZE)
         print data

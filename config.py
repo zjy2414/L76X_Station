@@ -11,7 +11,7 @@ class config(object):
     FORCE  = 17
     STANDBY= 4
     def __init__(ser, Baudrate = 9600):
-        ser.serial = serial.Serial("/dev/ttyS0",Baudrate)
+        ser.serial = serial.Serial("/dev/ttyAMA0",Baudrate)  # /dev/ttyS0
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
