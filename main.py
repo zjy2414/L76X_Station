@@ -38,7 +38,7 @@ def Main():
 
         #    print 'Lon = %f'%x.Lon,
         #    print ' Lat = %f'%x.Lat
-           x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
+        x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
         #    print 'Baidu coordinate %f'%x.Lat_Baidu,
         #    print ',%f'%x.Lon_Baidu
         try:
