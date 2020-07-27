@@ -20,33 +20,23 @@ def Main():
         x.L76X_Send_Command(x.SET_NMEA_OUTPUT);
 
         x.L76X_Exit_BackupMode();
-        ###
-        x.L76X_Gat_GNRMC()
-        #    try:
-        #        x.Get_GNGGA()
-        #    except:
-        #        Lora.Send('error!!')    
+        while(1):
+           x.L76X_Gat_GNRMC()  
 
-        if(x.Status == 1):
-               print "Already positioned"
-        else:
-               print "No positioning"
+           if(x.Status == 1):
+               print 'Already positioned'
+           else:
+               print 'No positioning'
 
-        #    print 'Time %d:'%x.Time_H,
-        #    print '%d:'%x.Time_M,
-        #    print '%d'%x.Time_S
-
-        #    print 'Lon = %f'%x.Lon,
         #    print ' Lat = %f'%x.Lat
-        x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
-        #    print 'Baidu coordinate %f'%x.Lat_Baidu,
-        #    print ',%f'%x.Lon_Baidu
-        try:
+           x.L76X_Baidu_Coordinates(x.Lat, x.Lon)
+
+           try:
                x.Get_GNGGA()
                x.Get_TP()
                message = "*" + str(x.Lon_Baidu) + "," + str(x.Lat_Baidu) + "," + x._Status + ',' + x.Satellites + ',' + x.Elevation + ',' + x.Temperture + ',' + x.Pressure
                Lora.Send(message)
-        except:
+           except:
                print("error.")
                Lora.Send("Main ERROR!")
         #    time.sleep(0.5)
@@ -55,5 +45,5 @@ def Main():
         print "\nProgram end"
         exit()
 
-
-Main()
+with daemon.DaemonContext():
+    Main()
