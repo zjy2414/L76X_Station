@@ -53,8 +53,8 @@
 
       3， 请将如下声明文本放入每个源文件的头部注释中。
 
-   Copyright (c) [Year] [name of copyright holder]
-   [Software Name] is licensed under Mulan PSL v2.
+   Copyright (c) 2021 东南dnf
+   L76X_Station is licensed under Mulan PSL v2.
    You can use this software according to the terms and conditions of the Mulan PSL v2. 
    You may obtain a copy of Mulan PSL v2 at:
             http://license.coscl.org.cn/MulanPSL2 
@@ -118,10 +118,10 @@
       iii Attach the statement to the appropriate annotated syntax at the beginning of each source file.
 
 
-   Copyright (c) [Year] [name of copyright holder]
-   [Software Name] is licensed under Mulan PSL v2.
+   Copyright (c) 2021 东南dnf
+   L76X_Station is licensed under Mulan PSL v2.
    You can use this software according to the terms and conditions of the Mulan PSL v2. 
    You may obtain a copy of Mulan PSL v2 at:
-               http://license.coscl.org.cn/MulanPSL2 
+            http://license.coscl.org.cn/MulanPSL2 
    THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.  
-   See the Mulan PSL v2 for more details.  
+   See the Mulan PSL v2 for more details. 
