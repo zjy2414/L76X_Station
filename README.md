@@ -4,9 +4,9 @@
 
 A radio position reporting station based on L76X and Lora.
 
-曾圆满完成气象气球探空并捕获魔都（上海）3万2千米大气层图像的任务。
+其衍生版本曾圆满完成气象气球探空并捕获魔都（上海）3万2千米大气层图像的任务。
 
-Once successfully completed the mission of meteorological balloon sounding and capturing the 32,000-kilometer atmospheric image of Shanghai.
+Its derivative version has successfully completed the mission of meteorological balloon sounding and capturing the 32,000-kilometer atmospheric image of Shanghai.
 
 ## images
 
