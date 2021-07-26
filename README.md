@@ -1,4 +1,4 @@
-# L76X_driver
+# L76X_Station
 
 基于L76X和Lora实现的无线电位置报告站。
 
